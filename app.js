@@ -66,7 +66,6 @@ qwerty.addEventListener('click', (e) => {
         e.target.className = 'chosen';
         const checked = checkLetter(e.target.textContent);
         if (checked === null) {
-            //const heart = document.querySelectorAll('.tries img');
             heart[missed].src = 'images/lostHeart.png';
             missed ++;
          }
@@ -75,6 +74,7 @@ qwerty.addEventListener('click', (e) => {
 });
 
 //Step 9 - Count the missed guesses in the game.
+//step 10 - Create a checkWin function.
 const checkWin = () => {
     const letter = document.querySelectorAll('.letter');
     const show = document.querySelectorAll('.show');
@@ -92,10 +92,10 @@ const checkWin = () => {
     }
 }
 
-//step 10 - Create a checkWin function.
+
 function reset() {
     missed = 0;
-    ul.innerHTML = '';
+    phraseList.innerHTML = '';
     const resetPhrase = getRandomPhraseAsArray(phrases);
     addPhraseToDisplay(resetPhrase);
     const chosenBtn = document.querySelectorAll('button');
@@ -103,6 +103,6 @@ function reset() {
         chosenBtn[i].classList.remove('chosen');
     }
     for (let i = 0; i < heart.length; i++) {
-        heart[i].src = 'liveHeart.png';
+        heart[i].src = 'images/liveHeart.png';
     }
 }
