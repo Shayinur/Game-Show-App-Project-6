@@ -86,7 +86,7 @@ const checkWin = () => {
         reset();
     } else if (missed > 4) {
         overlay.classList.add('lose');
-        headline.textContent = 'You lose.';
+        headline.textContent = 'You lose:(';
         overlay.style.display = 'flex';
         reset();
     }
